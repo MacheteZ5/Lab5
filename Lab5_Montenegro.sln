@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5_Montenegro", "Lab5_Montenegro\Lab5_Montenegro.csproj", "{BE568239-EADF-4FEF-984C-BFE003BB2CEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5_Consola", "Lab5_Consola\Lab5_Consola.csproj", "{231413BE-5946-4879-B141-B7E64BA2D1FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BE568239-EADF-4FEF-984C-BFE003BB2CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE568239-EADF-4FEF-984C-BFE003BB2CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE568239-EADF-4FEF-984C-BFE003BB2CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{231413BE-5946-4879-B141-B7E64BA2D1FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{231413BE-5946-4879-B141-B7E64BA2D1FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{231413BE-5946-4879-B141-B7E64BA2D1FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{231413BE-5946-4879-B141-B7E64BA2D1FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

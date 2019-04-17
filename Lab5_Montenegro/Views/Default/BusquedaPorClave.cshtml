@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Lab5_Montenegro.Models.Estampa>
+
+@{
+    ViewBag.Title = "BusquedaPorClave";
+}
+
+<h2>BusquedaPorClave</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Claves)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Claves)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<form action="Busqueda" method="post">
+    <label>Nombre: <input type="text" name="nombre" value=" " /></label><br />
+    <input type="submit" name="enviar" value="Busqueda" />
+</form>

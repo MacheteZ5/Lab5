@@ -1,0 +1,21 @@
+﻿@using Lab5_Montenegro.Models;
+@model IEnumerable<Estampa>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<body>
+
+    @using (Html.BeginForm("Index", "Default", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="postedFile" />
+        <input type="submit" value="Importar (Mostrar archivo)" />
+    }
+</body>
+</html>
+<br />
+<form action="Default/Menú" method="post">
+    <input type="submit" name="enviar" value="Ir Al Menú" />
+</form>
+

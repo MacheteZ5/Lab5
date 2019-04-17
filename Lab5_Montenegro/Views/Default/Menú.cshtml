@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Menú";
+}
+
+<h2>Menú Del Album</h2>
+
+<form action="ComprarSobre" method="post">
+    <input type="submit" name="enviar" value="Comprar un nuevo Sobre" />
+</form>
+<br />
+<form action="ObservarAlbumActual" method="post">
+    <input type="submit" name="enviar" value="Observar Album Actual" />
+</form>
+<br />
+<form action="ObservarAlbumInicial" method="post">
+    <input type="submit" name="enviar" value="Observar Album Inicial" />
+</form>
+<br />
+<form action="Actualizar" method="post">
+    <input type="submit" name="enviar" value="Actualizar" />
+</form>
+<br />
+<form action="BusquedaPorClave" method="post">
+    <input type="submit" name="enviar" value="Busqueda Por Clave" />
+</form>
+<br />
+<form action="BusquedaPorEquipo" method="post">
+    <label>Equipo o Especial: <input type="text" name="equipo" value=" " /></label><br />
+    <input type="submit" name="enviar" value="Busqueda Por Equipo" />
+</form>
+<br />
+<form action="ComprobarCualesHacenFalta" method="post">
+    <input type="submit" name="enviar" value="Comprobar Cuales Hacen Falta" />
+</form>

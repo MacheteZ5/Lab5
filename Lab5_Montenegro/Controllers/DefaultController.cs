@@ -15,14 +15,20 @@ namespace Lab5_Montenegro.Controllers
         {
             return View(new List<Estampa>());
         }
+        //Un vector de tipo estampa que contendá los diferentes tipos de estampas. Se utilizó para crear un random de todas las estampas para simular la compra de un sobre de estampas
         static Estampa[] sobre = new Estampa[205];
+        //un vector que contendrá todas las claves del diccionario
         static string[] claves = new string[205];
-        static Dictionary<string, Estampa> dic2 = new Dictionary<string, Estampa>();
         static int contador = 0;
+        //Este es el primer diccionario que contendrá un guid como clave y un valor estampa 
+        //Por cada estampa del album existe una llave diferente
         static Dictionary<Guid, Estampa> dic = new Dictionary<Guid, Estampa>();
+        //Este es el segundo diccionario que contendrá las claves de tipo string y los valores serán los tipo estampa del album
+        static Dictionary<string, Estampa> dic2 = new Dictionary<string, Estampa>();
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase postedFile)
         {
+            //carga de archivo
             if (dic.Count == 0)
             {
                 int muestra = 0;
@@ -79,12 +85,15 @@ namespace Lab5_Montenegro.Controllers
             }
             return View();
         }
+        //Menú, aquí se podrá acceder a todos los tipos de ActionResult del programa
         public ActionResult Menú()
         {
             return View();
         }
+        //Aquí se podrá crear un nuevo sobre que contendrá 5 diferentes tipos de estampas
         public ActionResult ComprarSobre()
         {
+            // al momento de obtener las cinco estampas, se actualiza la cantidad automáticamente en el diccionario
             List<Estampa> lista = new List<Estampa>();
             Random nuevosobre = new Random();
             while (lista.Count != 5)
@@ -107,6 +116,7 @@ namespace Lab5_Montenegro.Controllers
                         select puntos;
             return View("ComprarSobre", model);
         }
+        //Aquí se podrá observar el diccionario 2 el cual contendrá los datos iniciales del album
         public ActionResult ObservarAlbumInicial()
         {
             List<Estampa> listas = new List<Estampa>();
@@ -118,6 +128,7 @@ namespace Lab5_Montenegro.Controllers
                         select puntos;
             return View("ObservarAlbumInicial", model);
         }
+        // Aquí se podra observar el diccionario 1 el cual contendrá los nuevos valores de las estampillas, al momento de comprar un sobre o cambiarla por una nueva estampilla
         public ActionResult ObservarAlbumActual()
         {
             List<Estampa> listad = new List<Estampa>();
@@ -129,6 +140,7 @@ namespace Lab5_Montenegro.Controllers
                         select puntos;
             return View("ObservarAlbumActual", model);
         }
+        //Actualizar sirve para crear un nuevo archivo csv que contendrá los valores del album actual
         private string ruta = AppDomain.CurrentDomain.BaseDirectory + "Archivos Que se Van a Utilizar//Album Actual.csv";
         public ActionResult Actualizar()
         {
@@ -148,6 +160,7 @@ namespace Lab5_Montenegro.Controllers
             writer.Close();
             return View();
         }
+        //En pantalla aparecerán las diferentes claves del diccionario, con las cuales podrá buscar los valores de las respectivas claves
         public ActionResult BusquedaPorClave()
         {
             List<Estampa> dato = new List<Estampa>();
@@ -184,6 +197,7 @@ namespace Lab5_Montenegro.Controllers
             }
             return View(l);
         }
+        // Funciona de la misma manera que la Busqueda, sin embargo en este, se mostrarán todas las estampas del equipo o si es en caso especial.
         public ActionResult BusquedaPorEquipo()
         {
             List<Estampa> l = new List<Estampa>();
@@ -208,6 +222,8 @@ namespace Lab5_Montenegro.Controllers
             }
             return View(l);
         }
+        //Al momento de cambiar una estampa por otra o comprar una estampa nueva, se actualiza el listado de comprobarcualeshacenfalta. 
+        //En esta lista solamente apareceran las estampas que le hacen falta para completar el album
         public ActionResult ComprobarCualesHacenFalta()
         {
             List<Estampa> l = new List<Estampa>();
